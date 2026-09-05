@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Taufik Khan — Secure Portal</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="bg"></div>
+<header class="top"><a class="brand" href="/">TAUFIK<span>.</span></a><button id="logout" class="ghost hidden">Logout</button></header>
+
+<main class="wrap">
+<section id="landing" class="hero">
+  <div class="eyebrow">PRIVATE • SECURE • CONNECTED</div>
+  <h1>Taufik Khan<br><span>Secure Portal</span></h1>
+  <p>Login, connect, submit forms and manage your profile. Every important account action appears in the admin activity panel.</p>
+  <div class="chips"><span>🔐 Secure login</span><span>⚡ Live activity</span><span>📱 Mobile ready</span></div>
+</section>
+
+<section id="auth" class="grid2">
+  <div class="card">
+    <div class="tabs"><button class="tab active" data-tab="login">Login</button><button class="tab" data-tab="signup">Sign up</button></div>
+    <form id="loginForm" class="form">
+      <input id="loginEmail" type="email" placeholder="Email" required>
+      <input id="loginPassword" type="password" placeholder="Password" required>
+      <button class="primary">Login</button>
+    </form>
+    <form id="signupForm" class="form hidden">
+      <input id="signupName" placeholder="Full name" required>
+      <input id="signupEmail" type="email" placeholder="Email" required>
+      <input id="signupPassword" type="password" placeholder="Password (8+ characters)" minlength="8" required>
+      <button class="primary">Create account</button>
+    </form>
+    <div id="authMsg" class="msg"></div>
+  </div>
+  <div class="card side">
+    <div class="icon">✦</div>
+    <h3>What gets recorded?</h3>
+    <p>Signups, successful logins, logout, profile changes, messages and form submissions are recorded for the site administrator.</p>
+    <small>No hidden device/location tracking is included in this starter.</small>
+  </div>
+</section>
+
+<section id="dashboard" class="hidden">
+  <div class="sectionHead"><div><div class="eyebrow">MEMBER AREA</div><h2>Welcome, <span id="userName"></span></h2></div><span id="roleBadge" class="badge"></span></div>
+  <div class="grid2">
+    <div class="card">
+      <h3>Profile</h3>
+      <form id="profileForm" class="form">
+        <input id="profileName" placeholder="Name" required>
+        <textarea id="profileBio" placeholder="Bio"></textarea>
+        <button class="primary">Save profile</button>
+      </form>
+      <div id="profileMsg" class="msg"></div>
+    </div>
+    <div class="card">
+      <h3>Send a message</h3>
+      <form id="messageForm" class="form">
+        <textarea id="messageText" placeholder="Write your message..." required></textarea>
+        <button class="primary">Send message</button>
+      </form>
+      <div id="messageMsg" class="msg"></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Submit a form</h3>
+    <form id="formForm" class="form">
+      <input id="formSubject" placeholder="Subject" required>
+      <textarea id="formDetails" placeholder="Details..." required></textarea>
+      <button class="primary">Submit</button>
+    </form>
+    <div id="formMsg" class="msg"></div>
+  </div>
+</section>
+
+<section id="admin" class="hidden">
+  <div class="sectionHead"><div><div class="eyebrow">ADMIN CONTROL</div><h2>Activity Center</h2></div><button id="notifyBtn" class="ghost">Enable notifications</button></div>
+  <div class="stats"><div class="stat"><b id="statUsers">0</b><span>Users</span></div><div class="stat"><b id="statEvents">0</b><span>Recent events</span></div></div>
+  <div class="card">
+    <div class="tableWrap"><table><thead><tr><th>Time</th><th>User</th><th>Action</th><th>Details</th></tr></thead><tbody id="activityRows"></tbody></table></div>
+  </div>
+  <div class="card">
+    <h3>Users</h3>
+    <div class="tableWrap"><table><thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Created</th></tr></thead><tbody id="userRows"></tbody></table></div>
+  </div>
+</section>
+</main>
+<footer>© Taufik Khan • Secure Portal</footer>
+<script src="/app.js"></script>
+</body>
+</html>
